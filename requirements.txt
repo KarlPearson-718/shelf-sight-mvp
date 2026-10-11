@@ -1,7 +1,7 @@
-ultralytics==8.3.0
-opencv-python==4.10.0.84
-numpy==1.26.4
-pyyaml==6.0.1
-requests==2.32.3
-streamlit==1.39.0
-pillow==10.4.0
+streamlit
+ultralytics
+opencv-python-headless
+numpy
+pyyaml
+requests
+pillow
