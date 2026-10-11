@@ -1,7 +1,10 @@
 import streamlit as st
 import json
 import time
+import numpy as np
+import cv2
 from pathlib import Path
+from ultralytics import YOLO
 
 st.set_page_config(page_title="Shelf Sight, Stock Right", layout="wide")
 st.title("🛒 Shelf Sight, Stock Right")
@@ -55,3 +58,32 @@ else:
 
 if st.button("🔄 Refresh"):
     st.rerun()
+# ==========================================
+# LIVE CAMERA DEMO SECTION
+# ==========================================
+st.markdown("---")
+st.subheader("📸 Live Shelf Camera Test")
+st.write("Click 'Take Photo' to capture a shelf image and run real-time detection.")
+
+@st.cache_resource
+def load_yolo():
+    return YOLO("yolov8n.pt")  # Auto-downloads the model
+
+model = load_yolo()
+
+# Browser camera input
+img_file_buffer = st.camera_input("Take a picture of the shelf")
+
+if img_file_buffer is not None:
+    # Convert uploaded image to OpenCV format
+    bytes_data = img_file_buffer.getvalue()
+    cv2_img = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
+    
+    # Run YOLO detection
+    with st.spinner("Detecting products..."):
+        results = model.predict(cv2_img, conf=0.35)
+        annotated_img = results[0].plot()  # Draws boxes on the image
+    
+    # Display the result
+    st.image(annotated_img, channels="BGR", caption="Detected Products")
+    st.success("✅ Detection complete! Products above are detected by YOLO.")
