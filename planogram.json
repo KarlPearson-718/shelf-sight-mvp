@@ -1,0 +1,41 @@
+{
+  "store_id": "S001",
+  "aisle": "A1",
+  "bay": "B01",
+  "version": "2026-10-10",
+  "shelves": [
+    {
+      "shelf_index": 1,
+      "y": 0.05,
+      "height": 0.28,
+      "slots": [
+        { "slot_id": "S1-01", "sku": "bottle",     "x": 0.02, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S1-02", "sku": "cup",        "x": 0.26, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S1-03", "sku": "book",       "x": 0.50, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S1-04", "sku": "cell phone", "x": 0.74, "w": 0.24, "min_facings": 1 }
+      ]
+    },
+    {
+      "shelf_index": 2,
+      "y": 0.38,
+      "height": 0.28,
+      "slots": [
+        { "slot_id": "S2-01", "sku": "bottle",     "x": 0.02, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S2-02", "sku": "cup",        "x": 0.26, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S2-03", "sku": "book",       "x": 0.50, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S2-04", "sku": "cell phone", "x": 0.74, "w": 0.24, "min_facings": 1 }
+      ]
+    },
+    {
+      "shelf_index": 3,
+      "y": 0.71,
+      "height": 0.28,
+      "slots": [
+        { "slot_id": "S3-01", "sku": "bottle",     "x": 0.02, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S3-02", "sku": "cup",        "x": 0.26, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S3-03", "sku": "book",       "x": 0.50, "w": 0.22, "min_facings": 1 },
+        { "slot_id": "S3-04", "sku": "cell phone", "x": 0.74, "w": 0.24, "min_facings": 1 }
+      ]
+    }
+  ]
+}

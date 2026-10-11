@@ -1,0 +1,22 @@
+camera:
+  source: 0
+  width: 1280
+  height: 720
+
+detector:
+  mode: "yolo"
+  model: "yolov8n.pt"
+  conf_threshold: 0.35
+  iou_threshold: 0.5
+
+audit:
+  temporal_window: 5
+  stable_frames: 3
+  alert_cooldown_sec: 60
+
+alert:
+  log_file: "alerts.log"
+  telegram:
+    enabled: false
+    bot_token: "YOUR_BOT_TOKEN"
+    chat_id: "YOUR_CHAT_ID"
